@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "devDependencies": {
+    "@nuxtjs/color-mode": "^3.1.4",
+    "@nuxtjs/eslint-config-typescript": "^10.0.0",
+    "@nuxtjs/tailwindcss": "^5.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^8.21.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "nuxt": "3.0.0-rc.6",
+    "nuxt-svgo": "^1.0.0",
+    "typescript": "^4.7.4",
+    "vite-plugin-eslint": "^1.7.0",
+    "vue-tsc": "^0.39.4"
+  }
+}

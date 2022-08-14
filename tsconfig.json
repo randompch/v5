@@ -1,0 +1,33 @@
+{
+  // https://v3.nuxtjs.org/concepts/typescript
+  // "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": [
+      "ESNext",
+      "ESNext.AsyncIterable",
+      "DOM"
+    ],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ],
+  "include": ["@types/*.d.ts", "**/*.ts", "**/*.d.ts", "**/*.tsx", "**/*.vue"]
+}
