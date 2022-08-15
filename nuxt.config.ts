@@ -15,6 +15,11 @@ export default defineNuxtConfig({
     typeCheck: true,
     strict: true,
   },
+  runtimeConfig: {
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID,
+    },
+  },
   vite: {
     plugins: [
       eslintPlugin(),
