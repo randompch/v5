@@ -1,26 +1,23 @@
 <template>
-  <header class="relative flex justify-center w-full pb-4 text-base bg-zinc-50 dark:bg-zinc-900 min-h-[90vh] text-zinc-700 dark:text-zinc-300">
-    <div class="container max-w-6xl mt-[40vh] p-4">
+  <header class="relative flex justify-center w-full pb-4 text-base bg-slate-50 dark:bg-slate-900 transition-colors min-h-[90vh] text-slate-700 dark:text-white">
+    <InputColorModeSwitcher class="absolute z-10 top-10 right-10 xl:fixed xl:top-10 xl:right-10" />
+    <div class="container max-w-6xl mt-[50vh] p-4">
       <ProfileIntroduction />
       <div class="w-full mt-9">
-        <transition
-          @enter="slideDown"
-          @leave="slideUp"
-        >
-          <ProfileDetails v-show="isActive" />
-        </transition>
-        <ProfileGithub />
+        <ProfileDetails v-show="isActive" />
+        <!-- <ProfileGithub /> -->
         <div class="flex flex-wrap">
           <BaseButton
             v-if="!isActive"
-            class="mr-2 font-medium transition shadow-base hover:shadow-expanded shadow-emerald-450 hover:shadow-emerald-450"
+            class="mr-2 font-medium transition group text-amber-400"
             is-unstyled
             @click="readMore"
           >
             Read more
+            <span class="block w-auto max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-amber-400" />
           </BaseButton>
           <p>
-            Or see my experiences below<span class="text-emerald-450">.</span>👇
+            Or see my experiences below<span class="text-amber-400">.</span>👇
           </p>
         </div>
       </div>
@@ -32,20 +29,6 @@
 const isActive = ref(false);
 const readMore = () => {
   isActive.value = !isActive.value;
-};
-
-const slideDown = (el, done) => {
-  this.$velocity(el, 'slideDown', {
-    duration: 'fast',
-    complete: done,
-  });
-};
-
-const slideUp = (el, done) => {
-  this.$velocity(el, 'slideUp', {
-    duration: 'fast',
-    complete: done,
-  });
 };
 </script>
 <!--

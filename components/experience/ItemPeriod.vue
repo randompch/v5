@@ -1,14 +1,14 @@
 <template>
   <span
     v-if="hasPeriod || experience.timeSpent"
-    class="flex flex-col items-end mt-0.5 font-mono text-xxs md:text-sm"
+    class="flex flex-col items-end mt-0.5 font-mono text-xs md:text-sm"
   >
     <span v-if="hasPeriod">
       {{ experience.startedAt }} - {{ experience.endedAt }}
     </span>
     <span
       v-if="experience.timeSpent"
-      class="text-zinc-400"
+      class="text-slate-400"
     >
       {{ experience.timeSpent }}
     </span>

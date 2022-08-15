@@ -45,4 +45,8 @@
   body {
     @apply w-full;
   }
+
+  ::selection {
+    @apply bg-amber-400;
+  }
 }

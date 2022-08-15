@@ -16,11 +16,12 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        base: 'inset 0px -3px 0px 0px',
-        expanded: 'inset 0px -10px 0px 0px',
+        base: 'inset 0px -2px 0px 0px',
+        expanded: 'inset 0px -5px 0px 0px',
       },
       colors: {
         emerald: {
+          ...colors.emerald,
           450: withOpacityValue('--color-emerald-custom'),
         },
       },
@@ -29,23 +30,6 @@ module.exports = {
         xxs: ['0.6875rem', '0.875rem'], // 11px, 14px
         tiny: ['0.8125rem', '1rem'], // 13px, 16px
       },
-    },
-    colors: {
-      current: 'currentColor',
-      company: {
-        lrlv: withOpacityValue('--color-company-lrlv'),
-        lvdf: withOpacityValue('--color-company-lvdf'),
-        adnstudio: withOpacityValue('--color-company-adnstudio'),
-        adnrealty: withOpacityValue('--color-company-adnrealty'),
-        vorimmo: withOpacityValue('--color-company-vorimmo'),
-        citydrop: withOpacityValue('--color-company-citydrop'),
-        bop: withOpacityValue('--color-company-bop'),
-        adlead: withOpacityValue('--color-company-adlead'),
-      },
-      white: colors.white,
-      neutral: colors.neutral,
-      transparent: 'transparent',
-      zinc: colors.zinc,
     },
     fontFamily: {
       // eslint-disable-next-line vue/max-len

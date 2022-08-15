@@ -3,36 +3,33 @@
     :alt="alt"
     :aria-label="alt"
     :class="{
-      'relative inline-block transition cursor-pointer shadow-base hover:text-zinc-700 dark:hovertext-white hover:shadow-expanded': !isUnstyled,
-      'shadow-emerald-450 hover:shadow-emerald-450': isPrimary,
+      'relative group inline-block transition text-amber-400 cursor-pointer': !isUnstyled,
+      'shadow-amber-400 hover:shadow-amber-400': isPrimary,
     }"
     :href="href"
   >
     <slot />
+    <span class="block w-auto max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-amber-400" />
   </a>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  props: {
-    href: {
-      type: String,
-      default: '',
-    },
-    alt: {
-      type: String,
-      default: '',
-    },
-    isPrimary: {
-      type: Boolean,
-      default: false,
-    },
-    isUnstyled: {
-      type: Boolean,
-      default: false,
-    },
+<script setup lang="ts">
+defineProps({
+  href: {
+    type: String,
+    default: '',
+  },
+  alt: {
+    type: String,
+    default: '',
+  },
+  isPrimary: {
+    type: Boolean,
+    default: false,
+  },
+  isUnstyled: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>
