@@ -5,22 +5,6 @@
 @tailwind utilities;
 
 @layer base {
-  /*
-   * Value need to be in HSLA to permit background-opacity on every color
-   * @see `tailwind.config.js` withOpacity function for more detail
-   */
-   :root {
-    --color-emerald-custom: 155, 100%, 43%; /* #2eec96 */ /* 166, 100%, 70% */ /* 155°, 100%, 43% */
-    --color-company-lrlv: 348, 100%, 50%; /* #ff0032 */
-    --color-company-lvdf: 210, 96%, 46%; /* #0575e6 */
-    --color-company-adnstudio: 347, 95%, 64%; /* #FA4B72 */
-    --color-company-adnrealty: 199, 100%, 50%; /* #00b0ff */
-    --color-company-vorimmo: 196, 86%, 59%; /* #3FC0F0 */
-    --color-company-citydrop: 12, 94%, 59%; /* #f95c33 */
-    --color-company-bop: 266, 88%, 34%; /* #4B0AA2 */
-    --color-company-adlead: 211, 100%, 51%; /* #057dff */
-  }
-
   @font-face {
     font-family: "CircularStd";
     src:    url("/fonts/CircularStd-Book.woff") format("woff");

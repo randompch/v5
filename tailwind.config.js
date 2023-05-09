@@ -1,10 +1,4 @@
 
-const colors = require('tailwindcss/colors');
-
-function withOpacityValue(variableName) {
-  return `hsla(var(${variableName}), <alpha-value>)`;
-}
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
@@ -18,12 +12,6 @@ module.exports = {
       boxShadow: {
         base: 'inset 0px -2px 0px 0px',
         expanded: 'inset 0px -5px 0px 0px',
-      },
-      colors: {
-        emerald: {
-          ...colors.emerald,
-          450: withOpacityValue('--color-emerald-custom'),
-        },
       },
       fontSize: {
         xxxs: ['0.625rem', '0.8125rem'], // 10px, 13px
