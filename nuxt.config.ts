@@ -63,6 +63,9 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-svgo',
   ],
+  runtimeConfig: {
+    email: process.env.EMAIL,
+  },
   typescript: {
     typeCheck: false,
     strict: false,

@@ -18,9 +18,9 @@
           />
         </BaseLink>
       </div>
-      <div class="text-center text-slate-700 dark:text-white text-xxs">
-        <p>Antoine Piché - 2022</p>
-      </div>
+      <p class="text-center text-slate-700 dark:text-white text-xxs">
+        {{ currentYear }}
+      </p>
     </div>
   </footer>
 </template>
@@ -32,37 +32,42 @@ import IcGithub from '@/assets/svg/IcGithub.svg';
 import IcLinkedin from '@/assets/svg/IcLinkedin.svg';
 import IcMedium from '@/assets/svg/IcMedium.svg';
 import IcStackoverflow from '@/assets/svg/IcStackoverflow.svg';
+import { ESocialLink } from '@/types/enums/SocialLink.enum';
+
+const { email } = useRuntimeConfig();
 
 const socialLinks = [
   {
     alt: 'Email address',
     component: IcSend,
-    link: 'mailto:antoinepiche@gmail.com',
+    link: `mailto:${email}`,
   },
   {
     alt: 'Linkedin profile',
     component: IcLinkedin,
-    link: 'https://www.linkedin.com/in/antoinepiche/',
+    link: ESocialLink.LinkedIn,
   },
   {
     alt: 'Github profile',
     component: IcGithub,
-    link: 'https://github.com/randompch',
+    link: ESocialLink.Github,
   },
   {
     alt: 'StackOverflow profile',
     component: IcStackoverflow,
-    link: 'https://stackoverflow.com/users/7262921/randxmpch',
+    link: ESocialLink.StackOverflow,
   },
   {
     alt: 'Medium profile',
     component: IcMedium,
-    link: 'https://medium.com/@randompiche',
+    link: ESocialLink.Medium,
   },
   // {
   //   alt: 'Dev.to profile',
   //   component: IcDevCommunity,
-  //   link: 'https://dev.to/randompch',
+  //   link: ESocialLink.Dev,
   // },
 ];
+
+const currentYear = new Date().getFullYear();
 </script>
