@@ -27,9 +27,9 @@ const epochs = [
   ['second', 1],
 ];
 
-const getDuration = (timeAgoInSeconds: number) => {
+const getDuration = (timeAgoInSeconds: number): void | { interval: number; epoch: string } => {
   for (const [name, seconds] of epochs) {
-    const interval = Math.floor(timeAgoInSeconds / parseInt(seconds));
+    const interval = Math.floor(timeAgoInSeconds / parseInt(`${seconds}`));
 
     if (interval >= 1) {
       return {
@@ -54,7 +54,7 @@ const experiences = computed(() => [
     company: {
       description: 'Second hand vintage furnitures (marketplace)',
       name: ECompany.Selency,
-      website: 'https://selency.co',
+      website: 'https://selency.com',
     },
     contractType: EContractType.FullTime,
     endedAt: 'Present.',

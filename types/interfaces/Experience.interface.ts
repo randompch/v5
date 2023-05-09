@@ -7,8 +7,9 @@ export interface Experience{
     name: `${ECompany}`;
     description: string;
   };
-  position: `${EPosition}`;
   contractType: `${EContractType}`;
-  startedAt: string;
   endedAt: string;
+  position: `${EPosition}`;
+  startedAt: string;
+  timeSpent: string;
 }
