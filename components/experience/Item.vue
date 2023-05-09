@@ -26,7 +26,7 @@
           <span>{{ experience.position }}</span>
           <span
             v-if="experience.contractType"
-            class="inline-flex px-1 py-px font-normal border rounded-full select-none text-xxxs"
+            class="inline-flex px-1 py-px font-normal border rounded-full select-none border-slate-400 text-xxxs"
           >
             {{ experience.contractType }}
           </span>
