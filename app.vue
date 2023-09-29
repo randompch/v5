@@ -47,21 +47,20 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      json: {
+      children: JSON.stringify({
         '@context': 'http://schema.org',
         '@type': 'Person',
         name: 'Antoine Piché',
         url: 'https://antoine-piche.com/',
         jobTitle: 'Front-end Engineer',
-        // eslint-disable-next-line vue/max-len
-        image: 'https://media.licdn.com/dms/image/C5603AQE7d7YzGP_7eA/profile-displayphoto-shrink_400_400/0/1545685433838?e=1689206400&v=beta&t=AW0iunh6Dh_4RKLs5nIVBskZhG3-KTo4gGVwWauORF8',
+        image: 'https://antoine-piche.com/profile_picture.jpeg',
         sameAs: [
           ESocialLink.LinkedIn,
           ESocialLink.Github,
           ESocialLink.StackOverflow,
           ESocialLink.Medium,
         ],
-      },
+      }),
     },
     {
       src: `https://www.googletagmanager.com/gtag/js?id=G-${config.googleAnalyticsId}`,
