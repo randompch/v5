@@ -43,6 +43,10 @@ useHead({
       type: 'image/x-icon',
       href: '/favicon.ico',
     },
+    {
+      rel: 'canonical',
+      href: 'https://antoine-piche.com/',
+    },
   ],
   script: [
     {
