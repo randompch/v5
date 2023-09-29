@@ -19,7 +19,7 @@
             v-if="experience?.company?.description"
             class="hidden ml-1 text-sm md:inline-flex text-slate-400"
           >
-            : {{ experience.company.description }}
+            - {{ experience.company.description }}
           </span>
         </span>
         <span class="flex flex-col flex-wrap items-start gap-1 text-sm font-normal transition-colors md:flex-row md:items-center md:inline-flex md:gap-2 text-slate-700 dark:text-slate-300">
