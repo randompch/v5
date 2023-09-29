@@ -67,7 +67,7 @@ useHead({
       }),
     },
     {
-      src: `https://www.googletagmanager.com/gtag/js?id=G-${config.googleAnalyticsId}`,
+      src: `https://www.googletagmanager.com/gtag/js?id=G-${config.public.googleAnalyticsId}`,
       async: true,
     },
     {
@@ -77,7 +77,7 @@ useHead({
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
         
-          gtag('config', 'G-${config.googleAnalyticsId}');
+          gtag('config', 'G-${config.public.googleAnalyticsId}');
         `,
       body: true,
     },
