@@ -15,6 +15,12 @@ useHead({
     lang: 'en',
   },
   title: 'Antoine Piché - Front-end Engineer (TypeScript)',
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://antoine-piche.com/',
+    },
+  ],
   meta: [
     { charset: 'utf-8' },
     {
@@ -42,10 +48,6 @@ useHead({
       rel: 'icon',
       type: 'image/x-icon',
       href: '/favicon.ico',
-    },
-    {
-      rel: 'canonical',
-      href: 'https://antoine-piche.com/',
     },
   ],
   script: [
