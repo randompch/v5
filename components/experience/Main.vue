@@ -61,7 +61,7 @@ const experiences = computed(() => [
     position: EPosition.FrontEndEngineer,
     startedAt: 'Feb 2022',
     timeSpent: timeAgo('2022-02-01'),
-    technologies: ['Typescript', 'Nuxt 2', 'Tailwind 3', 'Jest', 'Cypress', 'Storybook', 'Symfony'],
+    technologies: ['Typescript', 'Nuxt 2', 'TailwindCSS 3', 'Jest', 'Cypress', 'Storybook', 'Symfony'],
   },
   {
     accentColor: 'text-[#ff566a]',
@@ -75,7 +75,7 @@ const experiences = computed(() => [
     position: EPosition.FrontEndEngineer,
     startedAt: 'Jun 2021',
     timeSpent: '5 months',
-    technologies: ['Typescript', 'Vue 2', 'Vue 3', 'Tailwind 2', 'Jest', 'Cypress', 'Storybook', 'Go'],
+    technologies: ['Typescript', 'Vue 2', 'Vue 3', 'TailwindCSS 2', 'Jest', 'Cypress', 'Storybook', 'Go'],
   },
   {
     accentColor: 'text-[#000000]',
