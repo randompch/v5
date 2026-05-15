@@ -18,9 +18,11 @@
           />
         </BaseLink>
       </div>
-      <p class="text-center text-xxs text-slate-700 dark:text-white">
-        {{ currentYear }}
-      </p>
+      <ClientOnly>
+        <p class="text-center text-xxs text-slate-700 dark:text-white">
+          Coucou, petit perruche ! 🦜
+        </p>
+      </ClientOnly>
     </div>
   </footer>
 </template>
@@ -68,6 +70,4 @@ const socialLinks = [
   //   link: ESocialLink.Dev,
   // },
 ];
-
-const currentYear = new Date().getFullYear();
 </script>
