@@ -11,7 +11,7 @@ import { useHead, useRuntimeConfig } from '#imports';
 import BaseFooter from './components/base/Footer.vue';
 import BaseHeader from './components/base/Header.vue';
 import ExperienceMain from './components/experience/Main.vue';
-import { ESocialLink } from '@@/types/enums/SocialLink.enum';
+import { ESocialLink } from '@@/domain/portfolio/constants';
 
 const config = useRuntimeConfig();
 

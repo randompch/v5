@@ -4,8 +4,16 @@ import { defineNuxtConfig } from 'nuxt/config';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   alias: {
-    '@': fileURLToPath(new URL('./', import.meta.url)),
+    '@': fileURLToPath(new URL('./app', import.meta.url)),
     '@@': fileURLToPath(new URL('./', import.meta.url)),
+  },
+  vite: {
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./app', import.meta.url)),
+        '@@': fileURLToPath(new URL('./', import.meta.url)),
+      },
+    },
   },
   compatibilityDate: '2025-01-01',
   future: {

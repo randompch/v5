@@ -15,9 +15,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import ExperienceItems from './Items.vue';
-import { ECompany } from '@@/types/enums/Company.enum';
-import { EContractType } from '@@/types/enums/ContractType.enum';
-import { EPosition } from '@@/types/enums/Position.enum';
+import { ECompany, EContractType, EPosition } from '@@/domain/portfolio/constants';
 
 const epochs = [
   ['year', 31536000],

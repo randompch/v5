@@ -66,7 +66,7 @@ import BaseLink from '../base/Link.vue';
 import ExperienceItemChildTimeline from './ItemChildTimeline.vue';
 import ExperienceItemPeriod from './ItemPeriod.vue';
 import ExperienceItems from './Items.vue';
-import type { Experience } from '@@/types/interfaces/Experience.interface';
+import type { Experience } from '@@/domain/portfolio/types';
 
 defineProps<{
   experience: Experience;

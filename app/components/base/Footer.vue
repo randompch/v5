@@ -36,7 +36,7 @@ import IcGithub from '@/assets/svg/IcGithub.svg';
 import IcLinkedin from '@/assets/svg/IcLinkedin.svg';
 import IcMedium from '@/assets/svg/IcMedium.svg';
 import IcStackoverflow from '@/assets/svg/IcStackoverflow.svg';
-import { ESocialLink } from '@@/types/enums/SocialLink.enum';
+import { ESocialLink } from '@@/domain/portfolio/constants';
 
 const { public: { email } } = useRuntimeConfig();
 
