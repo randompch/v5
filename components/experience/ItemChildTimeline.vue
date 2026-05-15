@@ -6,7 +6,7 @@
   />
   <span
     v-if="isChild && !isLast"
-    class="absolute -left-[11.5px] top-5 z-0 block h-[48px] w-px bg-slate-200 md:h-[34px]"
+    class="absolute left-[-11.5px] top-5 z-0 block h-[48px] w-px bg-slate-200 md:h-[34px]"
   />
 </template>
 

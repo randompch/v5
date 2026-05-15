@@ -27,6 +27,8 @@ export default defineComponent({
           element.style.visibility = null;
           element.style.height = 0;
 
+          // Force a reflow before triggering the height transition
+          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
           getComputedStyle(element).height;
 
           requestAnimationFrame(() => {
@@ -37,6 +39,8 @@ export default defineComponent({
           const height = getComputedStyle(element).height;
           element.style.height = height;
 
+          // Force a reflow before triggering the collapse transition
+          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
           getComputedStyle(element).height;
 
           requestAnimationFrame(() => {
