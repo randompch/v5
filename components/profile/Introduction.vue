@@ -33,6 +33,8 @@
 </template>
 
 <script setup lang="ts">
+import BaseLink from '../base/Link.vue';
+
 defineProps<{
   shouldDisplayProfileDetails: boolean;
 }>();

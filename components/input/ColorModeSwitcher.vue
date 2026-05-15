@@ -20,6 +20,9 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useColorMode } from '#imports';
+import BaseButton from '../base/Button.vue';
 import IcSun from '@/assets/svg/IcSun.svg';
 import IcMoon from '@/assets/svg/IcMoon.svg';
 

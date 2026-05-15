@@ -1,7 +1,12 @@
+import { fileURLToPath } from 'node:url';
 import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  alias: {
+    '@': fileURLToPath(new URL('./', import.meta.url)),
+    '@@': fileURLToPath(new URL('./', import.meta.url)),
+  },
   compatibilityDate: '2025-01-01',
   future: {
     compatibilityVersion: 4,
@@ -15,6 +20,10 @@ export default defineNuxtConfig({
     'nuxt-svgo',
     '@nuxtjs/mcp-toolkit',
   ],
+  components: false,
+  imports: {
+    autoImport: false,
+  },
   runtimeConfig: {
     public: {
       email: process.env.EMAIL,

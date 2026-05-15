@@ -10,6 +10,8 @@
   </ul>
 </template>
 <script setup lang="ts">
+import ExperienceItem from './Item.vue';
+
 defineProps({
   experiences: {
     type: Array,

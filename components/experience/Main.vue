@@ -13,10 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import { ECompany } from '@/types/enums/Company.enum';
-import { EContractType } from '@/types/enums/ContractType.enum';
-import { EPosition } from '@/types/enums/Position.enum';
 import { computed } from 'vue';
+import ExperienceItems from './Items.vue';
+import { ECompany } from '@@/types/enums/Company.enum';
+import { EContractType } from '@@/types/enums/ContractType.enum';
+import { EPosition } from '@@/types/enums/Position.enum';
 
 const epochs = [
   ['year', 31536000],

@@ -31,7 +31,13 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { ref } from 'vue';
+import BaseButton from './Button.vue';
+import InputColorModeSwitcher from '../input/ColorModeSwitcher.vue';
+import ProfileDetails from '../profile/Details.vue';
+import ProfileIntroduction from '../profile/Introduction.vue';
+
 const shouldDisplayProfileDetails = ref(false);
 const toggleReadMore = () => {
   shouldDisplayProfileDetails.value = !shouldDisplayProfileDetails.value;

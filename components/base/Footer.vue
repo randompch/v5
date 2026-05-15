@@ -28,13 +28,15 @@
 </template>
 
 <script setup lang='ts'>
+import { useRuntimeConfig } from '#imports';
+import BaseLink from './Link.vue';
 import IcSend from '@/assets/svg/IcSend.svg';
 // import IcDevCommunity from '@/assets/svg/IcDevCommunity.svg';
 import IcGithub from '@/assets/svg/IcGithub.svg';
 import IcLinkedin from '@/assets/svg/IcLinkedin.svg';
 import IcMedium from '@/assets/svg/IcMedium.svg';
 import IcStackoverflow from '@/assets/svg/IcStackoverflow.svg';
-import { ESocialLink } from '@/types/enums/SocialLink.enum';
+import { ESocialLink } from '@@/types/enums/SocialLink.enum';
 
 const { public: { email } } = useRuntimeConfig();
 

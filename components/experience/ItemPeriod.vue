@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import type { Experience } from '@/types/interfaces/Experience.interface';
+import type { Experience } from '@@/types/interfaces/Experience.interface';
 
 const props = defineProps<{
   experience: Experience;

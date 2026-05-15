@@ -7,7 +7,12 @@
 </template>
 
 <script setup lang="ts">
-import { ESocialLink } from './types/enums/SocialLink.enum';
+import { useHead, useRuntimeConfig } from '#imports';
+import BaseFooter from './components/base/Footer.vue';
+import BaseHeader from './components/base/Header.vue';
+import ExperienceMain from './components/experience/Main.vue';
+import { ESocialLink } from '@@/types/enums/SocialLink.enum';
+
 const config = useRuntimeConfig();
 
 useHead({
