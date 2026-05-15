@@ -1,4 +1,6 @@
+import { h } from 'vue';
+
 export default {
   name: 'SvgStub',
-  render: (): null => null,
+  render: () => h('svg', { 'data-test': 'svg-stub' }),
 };
