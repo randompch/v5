@@ -27,6 +27,6 @@
   }
 
   ::selection {
-    @apply bg-amber-400;
+    @apply bg-[#099078]
   }
 }
