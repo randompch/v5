@@ -13,10 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import { ECompany } from '@/types/enums/Company.enum';
 import { EContractType } from '@/types/enums/ContractType.enum';
 import { EPosition } from '@/types/enums/Position.enum';
+import { computed } from 'vue';
 
 const epochs = [
   ['year', 31536000],
@@ -141,7 +141,7 @@ const experiences = computed(() => [
   {
     accentColor: 'text-[#032e8a]',
     company: {
-      description: 'Web agency',
+      description: 'Digital marketing agency dedicated to real estate developers',
       name: ECompany.AdnRealty,
       website: 'https://www.adn-realty.com',
     },
