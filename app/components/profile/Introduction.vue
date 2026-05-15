@@ -32,10 +32,23 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from 'vue';
 import BaseLink from '../base/Link.vue';
 
-defineProps<{
-  shouldDisplayProfileDetails: boolean;
-}>();
+export default defineComponent({
+  name: 'ProfileIntroduction',
+  components: {
+    BaseLink,
+  },
+  props: {
+    shouldDisplayProfileDetails: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  setup() {
+    return {};
+  },
+});
 </script>

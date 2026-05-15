@@ -17,8 +17,8 @@
   </a>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue';
+<script lang="ts">
+import { computed, defineComponent } from 'vue';
 
 const baseURL = 'https://github-readme-stats-beryl-ten.vercel.app/api';
 
@@ -34,35 +34,45 @@ const commonThemeOptions = {
   title_color: '3f3f46',
 };
 
-const statsURL = computed(() => {
-  const params = new URLSearchParams({
-    ...commonThemeOptions,
-    cache_seconds: 86400,
-    count_private: true,
-    custom_title: 'Randompch\'s Github Stats',
-    disable_animations: true,
-    hide_border: true,
-    hide_rank: true,
-    hide_title: false,
-    hide: 'stars,contribs',
-    include_all_commits: true,
-    locale: 'en',
-    username: 'randompch',
-  });
+export default defineComponent({
+  name: 'ProfileGithub',
+  setup() {
+    const statsURL = computed(() => {
+      const params = new URLSearchParams({
+        ...commonThemeOptions,
+        cache_seconds: 86400,
+        count_private: true,
+        custom_title: 'Randompch\'s Github Stats',
+        disable_animations: true,
+        hide_border: true,
+        hide_rank: true,
+        hide_title: false,
+        hide: 'stars,contribs',
+        include_all_commits: true,
+        locale: 'en',
+        username: 'randompch',
+      });
 
-  return `${baseURL}?${params.toString()}`;
-});
+      return `${baseURL}?${params.toString()}`;
+    });
 
-const topLangsURL = computed(() => {
-  const params = new URLSearchParams({
-    ...commonThemeOptions,
-    hide_title: false,
-    hide: 'css,scss,php,kotlin,html',
-    layout: 'compact',
-    username: 'randompch',
-    langs_count: 4,
-  });
+    const topLangsURL = computed(() => {
+      const params = new URLSearchParams({
+        ...commonThemeOptions,
+        hide_title: false,
+        hide: 'css,scss,php,kotlin,html',
+        layout: 'compact',
+        username: 'randompch',
+        langs_count: 4,
+      });
 
-  return `${baseURL}/top-langs?${params.toString()}`;
+      return `${baseURL}/top-langs?${params.toString()}`;
+    });
+
+    return {
+      statsURL,
+      topLangsURL,
+    };
+  },
 });
 </script>

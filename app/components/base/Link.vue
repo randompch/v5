@@ -13,23 +13,31 @@
   </a>
 </template>
 
-<script setup lang="ts">
-defineProps({
-  href: {
-    type: String,
-    default: '',
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'BaseLink',
+  props: {
+    href: {
+      type: String,
+      default: '',
+    },
+    alt: {
+      type: String,
+      default: '',
+    },
+    isPrimary: {
+      type: Boolean,
+      default: false,
+    },
+    isUnstyled: {
+      type: Boolean,
+      default: false,
+    },
   },
-  alt: {
-    type: String,
-    default: '',
-  },
-  isPrimary: {
-    type: Boolean,
-    default: false,
-  },
-  isUnstyled: {
-    type: Boolean,
-    default: false,
+  setup() {
+    return {};
   },
 });
 </script>

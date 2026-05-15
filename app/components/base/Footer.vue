@@ -27,7 +27,8 @@
   </footer>
 </template>
 
-<script setup lang='ts'>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { useRuntimeConfig } from '#imports';
 import BaseLink from './Link.vue';
 import IcSend from '@/assets/svg/IcSend.svg';
@@ -38,38 +39,50 @@ import IcMedium from '@/assets/svg/IcMedium.svg';
 import IcStackoverflow from '@/assets/svg/IcStackoverflow.svg';
 import { ESocialLink } from '@@/domain/portfolio/constants';
 
-const { public: { email } } = useRuntimeConfig();
+export default defineComponent({
+  name: 'BaseFooter',
+  components: {
+    BaseLink,
+  },
+  setup() {
+    const { public: { email } } = useRuntimeConfig();
 
-const socialLinks = [
-  {
-    alt: 'Email address',
-    component: IcSend,
-    link: `mailto:${email}`,
+    const socialLinks = [
+      {
+        alt: 'Email address',
+        component: IcSend,
+        link: `mailto:${email}`,
+      },
+      {
+        alt: 'Linkedin profile',
+        component: IcLinkedin,
+        link: ESocialLink.LinkedIn,
+      },
+      {
+        alt: 'Github profile',
+        component: IcGithub,
+        link: ESocialLink.Github,
+      },
+      {
+        alt: 'StackOverflow profile',
+        component: IcStackoverflow,
+        link: ESocialLink.StackOverflow,
+      },
+      {
+        alt: 'Medium profile',
+        component: IcMedium,
+        link: ESocialLink.Medium,
+      },
+      // {
+      //   alt: 'Dev.to profile',
+      //   component: IcDevCommunity,
+      //   link: ESocialLink.Dev,
+      // },
+    ];
+
+    return {
+      socialLinks,
+    };
   },
-  {
-    alt: 'Linkedin profile',
-    component: IcLinkedin,
-    link: ESocialLink.LinkedIn,
-  },
-  {
-    alt: 'Github profile',
-    component: IcGithub,
-    link: ESocialLink.Github,
-  },
-  {
-    alt: 'StackOverflow profile',
-    component: IcStackoverflow,
-    link: ESocialLink.StackOverflow,
-  },
-  {
-    alt: 'Medium profile',
-    component: IcMedium,
-    link: ESocialLink.Medium,
-  },
-  // {
-  //   alt: 'Dev.to profile',
-  //   component: IcDevCommunity,
-  //   link: ESocialLink.Dev,
-  // },
-];
+});
 </script>

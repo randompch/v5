@@ -10,15 +10,23 @@
   />
 </template>
 
-<script setup lang="ts">
-defineProps({
-  isChild: {
-    type: Boolean,
-    default: false,
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'ExperienceItemChildTimeline',
+  props: {
+    isChild: {
+      type: Boolean,
+      default: false,
+    },
+    isLast: {
+      type: Boolean,
+      default: false,
+    },
   },
-  isLast: {
-    type: Boolean,
-    default: false,
+  setup() {
+    return {};
   },
 });
 </script>

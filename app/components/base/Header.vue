@@ -31,15 +31,31 @@
   </header>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue';
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
 import BaseButton from './Button.vue';
 import InputColorModeSwitcher from '../input/ColorModeSwitcher.vue';
 import ProfileDetails from '../profile/Details.vue';
 import ProfileIntroduction from '../profile/Introduction.vue';
 
-const shouldDisplayProfileDetails = ref(false);
-const toggleReadMore = () => {
-  shouldDisplayProfileDetails.value = !shouldDisplayProfileDetails.value;
-};
+export default defineComponent({
+  name: 'BaseHeader',
+  components: {
+    BaseButton,
+    InputColorModeSwitcher,
+    ProfileDetails,
+    ProfileIntroduction,
+  },
+  setup() {
+    const shouldDisplayProfileDetails = ref(false);
+    const toggleReadMore = (): void => {
+      shouldDisplayProfileDetails.value = !shouldDisplayProfileDetails.value;
+    };
+
+    return {
+      shouldDisplayProfileDetails,
+      toggleReadMore,
+    };
+  },
+});
 </script>

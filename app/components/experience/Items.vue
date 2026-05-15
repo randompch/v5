@@ -9,17 +9,28 @@
     />
   </ul>
 </template>
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent, type PropType } from 'vue';
 import ExperienceItem from './Item.vue';
+import type { Experience } from '@@/domain/portfolio/types';
 
-defineProps({
-  experiences: {
-    type: Array,
-    required: true,
+export default defineComponent({
+  name: 'ExperienceItems',
+  components: {
+    ExperienceItem,
   },
-  isChild: {
-    type: Boolean,
-    default: false,
+  props: {
+    experiences: {
+      type: Array as PropType<Experience[]>,
+      required: true,
+    },
+    isChild: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup() {
+    return {};
   },
 });
 </script>

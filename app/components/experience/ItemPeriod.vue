@@ -1,7 +1,7 @@
 <template>
   <span
     v-if="hasPeriod || experience.timeSpent"
-    class="flex flex-col items-end mt-0.5 text-xs md:text-sm"
+    class="mt-0.5 flex flex-col items-end text-xs md:text-sm"
   >
     <span v-if="hasPeriod">
       {{ experience.startedAt }} - {{ experience.endedAt }}
@@ -15,16 +15,24 @@
   </span>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue';
-
+<script lang="ts">
+import { computed, defineComponent, type PropType } from 'vue';
 import type { Experience } from '@@/domain/portfolio/types';
 
-const props = defineProps<{
-  experience: Experience;
-}>();
+export default defineComponent({
+  name: 'ExperienceItemPeriod',
+  props: {
+    experience: {
+      type: Object as PropType<Experience>,
+      required: true,
+    },
+  },
+  setup(props) {
+    const hasPeriod = computed(() => !!props.experience?.startedAt && !!props.experience?.endedAt);
 
-const hasPeriod = computed(() => {
-  return !!props.experience?.startedAt && !!props.experience?.endedAt;
+    return {
+      hasPeriod,
+    };
+  },
 });
 </script>

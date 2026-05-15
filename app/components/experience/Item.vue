@@ -61,16 +61,40 @@
   </li>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import { defineAsyncComponent, defineComponent, type PropType } from 'vue';
 import BaseLink from '../base/Link.vue';
 import ExperienceItemChildTimeline from './ItemChildTimeline.vue';
 import ExperienceItemPeriod from './ItemPeriod.vue';
-import ExperienceItems from './Items.vue';
 import type { Experience } from '@@/domain/portfolio/types';
 
-defineProps<{
-  experience: Experience;
-  isChild: boolean;
-  isLast: boolean;
-}>();
+// Defined async to break the circular import between Item and Items.
+const ExperienceItems = defineAsyncComponent(() => import('./Items.vue'));
+
+export default defineComponent({
+  name: 'ExperienceItem',
+  components: {
+    BaseLink,
+    ExperienceItemChildTimeline,
+    ExperienceItemPeriod,
+    ExperienceItems,
+  },
+  props: {
+    experience: {
+      type: Object as PropType<Experience>,
+      required: true,
+    },
+    isChild: {
+      type: Boolean,
+      required: true,
+    },
+    isLast: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  setup() {
+    return {};
+  },
+});
 </script>

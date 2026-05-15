@@ -19,8 +19,8 @@
   </BaseButton>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue';
+<script lang="ts">
+import { computed, defineComponent } from 'vue';
 import { useColorMode } from '#imports';
 import BaseButton from '../base/Button.vue';
 import IcSun from '@/assets/svg/IcSun.svg';
@@ -32,12 +32,24 @@ const EColorMode = {
   System: 'system',
 } as const;
 
-const colorMode = useColorMode();
+export default defineComponent({
+  name: 'InputColorModeSwitcher',
+  components: {
+    BaseButton,
+  },
+  setup() {
+    const colorMode = useColorMode();
+    const isDarkMode = computed(() => colorMode.value === EColorMode.Dark);
+    const colorModeIcon = computed(() => isDarkMode.value ? IcSun : IcMoon);
 
-const isDarkMode = computed(() => colorMode.value === EColorMode.Dark);
-const colorModeIcon = computed(() => isDarkMode.value ? IcSun : IcMoon);
+    const toggleMode = (): void => {
+      colorMode.preference = isDarkMode.value ? EColorMode.Light : EColorMode.Dark;
+    };
 
-const toggleMode = () => {
-  colorMode.preference = isDarkMode.value ? EColorMode.Light : EColorMode.Dark;
-};
+    return {
+      colorModeIcon,
+      toggleMode,
+    };
+  },
+});
 </script>
