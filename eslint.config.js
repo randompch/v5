@@ -88,6 +88,10 @@ export default [
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-useless-constructor': 'error',
+      '@typescript-eslint/consistent-type-imports': ['error', {
+        prefer: 'type-imports',
+        fixStyle: 'separate-type-imports',
+      }],
       'arrow-parens': ['error', 'always'],
       'comma-dangle': ['error', 'always-multiline'],
       indent: ['error', 2, {

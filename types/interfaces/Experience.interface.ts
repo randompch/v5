@@ -1,6 +1,6 @@
-import { ECompany } from '../enums/Company.enum';
-import { EContractType } from '../enums/ContractType.enum';
-import { EPosition } from '../enums/Position.enum';
+import type { ECompany } from '../enums/Company.enum';
+import type { EContractType } from '../enums/ContractType.enum';
+import type { EPosition } from '../enums/Position.enum';
 
 export interface Experience{
   company: {

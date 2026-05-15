@@ -5,7 +5,7 @@
       :is-last="isLast"
     />
     <div class="flex justify-between leading-6">
-      <span class="inline-flex w-full flex-1 flex-col">
+      <span class="inline-flex w-full flex-1 flex-col gap-2">
         <span class="inline-flex flex-col">
           <BaseLink
             v-if="experience?.company?.name"
@@ -17,7 +17,7 @@
           </BaseLink>
           <span
             v-if="experience?.company?.description"
-            class="hidden text-sm text-slate-400 md:block"
+            class="font-serif hidden text-sm text-slate-400 md:block"
           >
           {{ experience.company.description }}
           </span>
@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import { Experience } from '@/types/interfaces/Experience.interface';
+import type { Experience } from '@/types/interfaces/Experience.interface';
 
 defineProps<{
   experience: Experience;
