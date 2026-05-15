@@ -6,10 +6,10 @@
     />
     <div class="flex justify-between leading-6">
       <span class="inline-flex flex-col flex-1 w-full">
-        <span class="inline-flex items-baseline">
+        <span class="inline-flex flex-col">
           <BaseLink
             v-if="experience?.company?.name"
-            class="mb-1 font-bold"
+            class="font-bold mr-auto"
             :href="experience.company.website"
             is-primary
           >
@@ -17,12 +17,12 @@
           </BaseLink>
           <span
             v-if="experience?.company?.description"
-            class="hidden ml-1 text-sm md:inline-flex text-slate-400"
+            class="hidden text-sm md:block text-slate-400"
           >
-            - {{ experience.company.description }}
+          {{ experience.company.description }}
           </span>
         </span>
-        <span class="flex flex-col flex-wrap items-start gap-1 text-sm font-normal transition-colors md:flex-row md:items-center md:inline-flex md:gap-2 text-slate-700 dark:text-slate-300">
+        <span class="flex flex-col mt-2 flex-wrap items-start gap-1 text-sm font-normal transition-colors md:flex-row md:items-center md:inline-flex md:gap-2 text-slate-700 dark:text-slate-300">
           <span>{{ experience.position }}</span>
           <span
             v-if="experience.contractType"
