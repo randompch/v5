@@ -17,12 +17,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-enum EButtonType {
-  Button = 'button',
-  Submit = 'submit',
-}
+const EButtonType = {
+  Button: 'button',
+  Submit: 'submit',
+} as const;
 
-type ButtonType = `${EButtonType}`;
+type ButtonType = (typeof EButtonType)[keyof typeof EButtonType];
 
 export default defineComponent({
   name: 'BaseButton',
@@ -31,7 +31,7 @@ export default defineComponent({
       type: String as () => ButtonType,
       default: EButtonType.Button,
       validator: (value: string): boolean => {
-        return Object.values(EButtonType).includes(value as EButtonType);
+        return (Object.values(EButtonType) as string[]).includes(value);
       },
     },
     isDisabled: {

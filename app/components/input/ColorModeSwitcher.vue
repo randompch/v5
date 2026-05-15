@@ -26,11 +26,11 @@ import BaseButton from '../base/Button.vue';
 import IcSun from '@/assets/svg/IcSun.svg';
 import IcMoon from '@/assets/svg/IcMoon.svg';
 
-enum EColorMode {
-  Dark = 'dark',
-  Light = 'light',
-  System = 'system',
-}
+const EColorMode = {
+  Dark: 'dark',
+  Light: 'light',
+  System: 'system',
+} as const;
 
 const colorMode = useColorMode();
 
