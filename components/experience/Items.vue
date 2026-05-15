@@ -1,5 +1,5 @@
 <template>
-  <ul class="w-full mt-4 space-y-7">
+  <ul class="mt-4 w-full space-y-7">
     <ExperienceItem
       v-for="(experience, index) in experiences"
       :key="index"

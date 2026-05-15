@@ -5,11 +5,11 @@
       :is-last="isLast"
     />
     <div class="flex justify-between leading-6">
-      <span class="inline-flex flex-col flex-1 w-full">
+      <span class="inline-flex w-full flex-1 flex-col">
         <span class="inline-flex flex-col">
           <BaseLink
             v-if="experience?.company?.name"
-            class="font-bold mr-auto"
+            class="mr-auto font-bold"
             :href="experience.company.website"
             is-primary
           >
@@ -17,25 +17,25 @@
           </BaseLink>
           <span
             v-if="experience?.company?.description"
-            class="hidden text-sm md:block text-slate-400"
+            class="hidden text-sm text-slate-400 md:block"
           >
           {{ experience.company.description }}
           </span>
         </span>
-        <span class="flex flex-col mt-2 flex-wrap items-start gap-1 text-sm font-normal transition-colors md:flex-row md:items-center md:inline-flex md:gap-2 text-slate-700 dark:text-slate-300">
+        <span class="mt-2 flex flex-col flex-wrap items-start gap-1 text-sm font-normal text-slate-700 transition-colors dark:text-slate-300 md:inline-flex md:flex-row md:items-center md:gap-2">
           <span>{{ experience.position }}</span>
           <span
             v-if="experience.contractType"
-            class="inline-flex px-1 py-px font-normal border rounded-full select-none border-slate-400 text-xxxs"
+            class="inline-flex select-none rounded-full border border-slate-400 px-1 py-px text-xxxs font-normal"
           >
             {{ experience.contractType }}
           </span>
         </span>
-        <span class="flex-wrap hidden w-full gap-2 mt-2 select-none md:flex md:w-3/4">
+        <span class="mt-2 hidden w-full select-none flex-wrap gap-2 md:flex md:w-3/4">
           <span
             v-for="tech in experience.technologies"
             :key="tech"
-            class="inline-flex px-1 py-px text-xs border rounded-sm text-amber-400 border-amber-400"
+            class="inline-flex rounded-sm border border-amber-400 px-1 py-px text-xs text-amber-400"
           >
             {{ tech }}
           </span>

@@ -1,7 +1,7 @@
 <template>
-  <footer class="relative flex justify-center w-full pt-10 bg-white dark:bg-slate-800">
+  <footer class="relative flex w-full justify-center bg-white pt-10 dark:bg-slate-800">
     <div class="container max-w-6xl p-4">
-      <div class="static w-auto flex justify-center my-4 space-x-4 text-slate-700 dark:text-white left-10 bottom-24 xl:fixed xl:flex-col xl:after:content-[''] xl:after:h-36 xl:after:w-1 xl:after:left-2.5 xl:after:bottom-0 xl:after:bg-slate-700 dark:xl:after:bg-slate-300 xl:after:translate-y-40 xl:after:absolute xl:after:block after:hidden xl:space-y-2 xl:space-x-0">
+      <div class="static bottom-24 left-10 my-4 flex w-auto justify-center space-x-4 text-slate-700 after:hidden dark:text-white xl:fixed xl:flex-col xl:space-x-0 xl:space-y-2 xl:after:absolute xl:after:bottom-0 xl:after:left-2.5 xl:after:block xl:after:h-36 xl:after:w-1 xl:after:translate-y-40 xl:after:bg-slate-700 xl:after:content-[''] dark:xl:after:bg-slate-300">
         <BaseLink
           v-for="(link, index) in socialLinks"
           :key="index"
@@ -14,11 +14,11 @@
         >
           <component
             :is="link.component"
-            class="inline-flex w-4 h-4"
+            class="inline-flex size-4"
           />
         </BaseLink>
       </div>
-      <p class="text-center text-slate-700 dark:text-white text-xxs">
+      <p class="text-center text-xxs text-slate-700 dark:text-white">
         {{ currentYear }}
       </p>
     </div>

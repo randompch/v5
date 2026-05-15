@@ -1,6 +1,6 @@
 <template>
   <a
-    class="flex flex-row flex-wrap w-full gap-2"
+    class="flex w-full flex-row flex-wrap gap-2"
     href="https://github.com/randompch"
     target="_blank"
   >

@@ -2,11 +2,11 @@
 <template>
   <span
     v-if="isChild"
-    class="absolute z-10 block w-1.5 h-1.5 rounded-full -left-3.5 bg-slate-300 top-2"
+    class="absolute -left-3.5 top-2 z-10 block size-1.5 rounded-full bg-slate-300"
   />
   <span
     v-if="isChild && !isLast"
-    class="absolute z-0 block w-px h-[48px] md:h-[34px] -left-[11.5px] bg-slate-200 top-5"
+    class="absolute -left-[11.5px] top-5 z-0 block h-[48px] w-px bg-slate-200 md:h-[34px]"
   />
 </template>
 

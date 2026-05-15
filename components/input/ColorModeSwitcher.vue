@@ -12,7 +12,7 @@
       >
         <component
           :is="colorModeIcon"
-          class="block w-6 h-6 sun"
+          class="sun block size-6"
         />
       </Transition>
     </ColorScheme>

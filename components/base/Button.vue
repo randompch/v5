@@ -1,7 +1,7 @@
 <template>
   <button
     :class="{
-      'relative inline-flex items-center justify-center p-3 uppercase border border-solid': !isUnstyled,
+      'relative inline-flex items-center justify-center border border-solid p-3 uppercase': !isUnstyled,
     }"
     data-testid="base-button"
     :disabled="isDisabled"

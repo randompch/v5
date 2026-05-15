@@ -3,13 +3,13 @@
     :alt="alt"
     :aria-label="alt"
     :class="{
-      'relative group inline-block transition text-amber-400 cursor-pointer': !isUnstyled,
+      'group relative inline-block cursor-pointer text-amber-400 transition': !isUnstyled,
       'shadow-amber-400 hover:shadow-amber-400': isPrimary,
     }"
     :href="href"
   >
     <slot />
-    <span class="block w-auto max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-amber-400" />
+    <span class="block h-0.5 w-auto max-w-0 bg-amber-400 transition-all duration-300 group-hover:max-w-full" />
   </a>
 </template>
 

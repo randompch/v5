@@ -1,11 +1,11 @@
 <template>
-  <section class="relative flex justify-center w-full py-4 transition-colors bg-white dark:bg-slate-800 text-slate-700 dark:text-white">
-    <div class="container flex flex-col max-w-6xl gap-4 p-4 xl:gap-10 xl:flex-row">
-      <h2 class="mt-8 font-bold tracking-widest uppercase">
+  <section class="relative flex w-full justify-center bg-white py-4 text-slate-700 transition-colors dark:bg-slate-800 dark:text-white">
+    <div class="container flex max-w-6xl flex-col gap-4 p-4 xl:flex-row xl:gap-10">
+      <h2 class="mt-8 font-bold uppercase tracking-widest">
         Experiences
       </h2>
       <ExperienceItems
-        class="w-full mt-8"
+        class="mt-8 w-full"
         :experiences="experiences"
       />
     </div>
