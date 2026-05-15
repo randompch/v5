@@ -48,8 +48,6 @@ jobs:
 
       - name: Generate static site
         run: pnpm generate
-        env:
-          NUXT_APP_BASE_URL: /v5/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
