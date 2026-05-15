@@ -9,7 +9,7 @@ const stubI18n = {
 };
 
 describe('ProfileIntroduction', () => {
-  it('renders the greeting and the three bio fragments', () => {
+  it('renders the greeting and the two short bio fragments when collapsed', () => {
     const wrapper = shallowMount(ProfileIntroduction, {
       ...stubI18n,
       props: { shouldDisplayProfileDetails: false },
@@ -18,6 +18,15 @@ describe('ProfileIntroduction', () => {
     expect(wrapper.text()).toContain('profile.introduction.greeting');
     expect(wrapper.text()).toContain('profile.introduction.bioFirst');
     expect(wrapper.text()).toContain('profile.introduction.bioSecond');
+    expect(wrapper.text()).not.toContain('profile.introduction.bioThird');
+  });
+
+  it('reveals the full bio when expanded', () => {
+    const wrapper = shallowMount(ProfileIntroduction, {
+      ...stubI18n,
+      props: { shouldDisplayProfileDetails: true },
+    });
+
     expect(wrapper.text()).toContain('profile.introduction.bioThird');
   });
 

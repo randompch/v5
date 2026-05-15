@@ -21,7 +21,12 @@
       }"
     >
       <p>{{ $t('profile.introduction.bioSecond') }}</p>
-      <p class="mt-6">{{ $t('profile.introduction.bioThird') }}</p>
+      <p
+        v-if="shouldDisplayProfileDetails"
+        class="mt-6"
+      >
+        {{ $t('profile.introduction.bioThird') }}
+      </p>
     </div>
   </div>
 </template>
