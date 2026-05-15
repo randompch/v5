@@ -17,7 +17,7 @@
           </BaseLink>
           <span
             v-if="experience?.company?.description"
-            class="font-serif hidden text-sm text-slate-400 md:block"
+            class="hidden text-sm text-slate-400 md:block"
           >
           {{ experience.company.description }}
           </span>
