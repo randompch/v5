@@ -1,20 +1,3 @@
-import { vi } from 'vitest';
-
-// Nuxt's virtual #imports module is not available in plain Vitest;
-// stub the composables our components actually pull from it.
-vi.mock('#imports', () => ({
-  useRuntimeConfig: () => ({
-    public: {
-      email: 'test@example.com',
-      googleAnalyticsId: 'TEST',
-    },
-    app: {
-      baseURL: '/',
-    },
-  }),
-  useHead: vi.fn(),
-  useColorMode: () => ({
-    value: 'light',
-    preference: 'light',
-  }),
-}));
+// Vitest setup hook. Module stubs (#imports, .svg) are wired via
+// resolve.alias in vitest.config.ts rather than vi.mock so Vite can
+// resolve them at transform time.
