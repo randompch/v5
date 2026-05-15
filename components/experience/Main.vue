@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity';
+import { computed } from 'vue';
 import { ECompany } from '@/types/enums/Company.enum';
 import { EContractType } from '@/types/enums/ContractType.enum';
 import { EPosition } from '@/types/enums/Position.enum';
@@ -58,7 +58,7 @@ const experiences = computed(() => [
     },
     contractType: EContractType.FullTime,
     endedAt: 'Present.',
-    position: EPosition.FrontEndEngineer,
+    position: EPosition.SoftwareEngineer,
     startedAt: 'Feb 2022',
     timeSpent: timeAgo('2022-02-01'),
     technologies: ['Typescript', 'Nuxt 2', 'TailwindCSS 3', 'Jest', 'Cypress', 'Storybook', 'Symfony'],

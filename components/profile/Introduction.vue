@@ -4,8 +4,9 @@
       Hi there! 👋 I'm Antoine<span class="text-amber-400">,</span>
     </h1>
     <p class="relative mt-3 font-normal">
-      a front-end engineer and Vue.js enthusiast <br>based in Paris, France 🇫🇷,
-      currently working at
+      I'm a product-minded Senior Software Engineer and Tech Lead with 10 years of experience
+      and deep expertise in front-end architecture, based in Paris, France 🇫🇷,
+      currently at
       <BaseLink
         alt="Selency website"
         href="https://selency.com"
@@ -13,20 +14,20 @@
       >
         Selency
       </BaseLink>.
-      <span class="transition-colors text-slate-400 dark:text-slate-400">
-        <br> I'm passionate about creating clear, accessible interfaces
-        <br> and writing clean, maintainable code.
-      </span>
+      I lead the design and evolution of scalable web products, helping teams turn complex
+      product and engineering challenges into simple, reliable and scalable solutions.
     </p>
     <p
-      class="relative mt-9 after:absolute after:bottom-0 after:left-0 after:content-[''] after:h-full after:w-full after:bg-gradient-to-t after:from-0% after:from-slate-50 dark:after:from-slate-900"
+      class="relative mt-6 after:absolute after:bottom-0 after:left-0 after:content-[''] after:h-full after:w-full after:bg-gradient-to-t after:from-0% after:from-slate-50 dark:after:from-slate-900"
       :class="{
         'after:block': !shouldDisplayProfileDetails,
         'after:hidden': shouldDisplayProfileDetails,
       }"
     >
-      I'm also someone who deeply cares about our environment and the impact we have on it.
-      I believe technology can (sometimes) be a force for good in mitigating our negative impact on ecosystems. 🌱
+      My work spans the full front-end lifecycle, from system design and SSR strategy
+      to performance, testing, production reliability and long-term maintainability.
+      I care deeply about code quality, documentation and engineering practices
+      that help teams move faster with clarity and confidence.
     </p>
   </div>
 </template>
