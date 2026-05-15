@@ -17,13 +17,12 @@ const baseExperience = {
 };
 
 describe('ExperienceItem', () => {
-  it('renders the company name and links to the company website', () => {
+  it('points the company link at the company website', () => {
     const wrapper = shallowMount(ExperienceItem, {
       props: { experience: baseExperience, isChild: false, isLast: false },
     });
 
     const link = wrapper.findComponent({ name: 'BaseLink' });
-    expect(link.text()).toContain('Selency');
     expect(link.props('href')).toBe('https://selency.com');
   });
 

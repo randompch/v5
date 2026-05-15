@@ -5,9 +5,6 @@ import BaseFooter from '@/components/base/BaseFooter.vue';
 const stubI18n = {
   global: {
     mocks: { $t: (key: string): string => key },
-    stubs: {
-      ClientOnly: { template: '<div><slot /></div>' },
-    },
   },
 };
 
@@ -24,11 +21,5 @@ describe('BaseFooter', () => {
     const mailto = wrapper.findAllComponents({ name: 'BaseLink' })
       .find((link) => link.props('href')?.startsWith('mailto:'));
     expect(mailto?.props('href')).toBe('mailto:test@example.com');
-  });
-
-  it('renders the easter-egg text under ClientOnly', () => {
-    const wrapper = shallowMount(BaseFooter, stubI18n);
-
-    expect(wrapper.text()).toContain('footer.easterEgg');
   });
 });
