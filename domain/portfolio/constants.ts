@@ -1,3 +1,5 @@
+import type { ValueOf } from 'type-fest';
+
 export const EPosition = {
   FrontEndDeveloper: 'Front-end developer',
   FrontEndEngineer: 'Front-end engineer',
@@ -5,7 +7,7 @@ export const EPosition = {
   SoftwareEngineer: 'Software engineer',
 } as const;
 
-export type Position = (typeof EPosition)[keyof typeof EPosition];
+export type Position = ValueOf<typeof EPosition>;
 
 export const ECompany = {
   AdnRealty: 'ADN Realty',
@@ -17,7 +19,7 @@ export const ECompany = {
   StudioBOP: 'Studio BOP',
 } as const;
 
-export type Company = (typeof ECompany)[keyof typeof ECompany];
+export type Company = ValueOf<typeof ECompany>;
 
 export const EContractType = {
   Apprenticeship: 'Apprenticeship',
@@ -27,7 +29,7 @@ export const EContractType = {
   PartTime: 'Part time',
 } as const;
 
-export type ContractType = (typeof EContractType)[keyof typeof EContractType];
+export type ContractType = ValueOf<typeof EContractType>;
 
 export const ESocialLink = {
   Dev: 'https://dev.to/randompch',
@@ -37,4 +39,4 @@ export const ESocialLink = {
   StackOverflow: 'https://stackoverflow.com/users/7262921/randompch',
 } as const;
 
-export type SocialLink = (typeof ESocialLink)[keyof typeof ESocialLink];
+export type SocialLink = ValueOf<typeof ESocialLink>;

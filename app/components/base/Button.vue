@@ -15,6 +15,7 @@
 </template>
 
 <script lang="ts">
+import type { ValueOf } from 'type-fest';
 import { defineComponent } from 'vue';
 
 const EButtonType = {
@@ -22,7 +23,7 @@ const EButtonType = {
   Submit: 'submit',
 } as const;
 
-type ButtonType = (typeof EButtonType)[keyof typeof EButtonType];
+type ButtonType = ValueOf<typeof EButtonType>;
 
 export default defineComponent({
   name: 'BaseButton',
