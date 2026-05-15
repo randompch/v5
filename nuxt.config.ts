@@ -35,6 +35,9 @@ export default defineNuxtConfig({
     'nuxt-svgo',
     '@nuxtjs/mcp-toolkit',
   ],
+  tailwindcss: {
+    cssPath: '@/assets/css/tailwind.css',
+  },
   components: false,
   imports: {
     autoImport: false,
