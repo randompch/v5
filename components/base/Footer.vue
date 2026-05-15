@@ -34,7 +34,7 @@ import IcMedium from '@/assets/svg/IcMedium.svg';
 import IcStackoverflow from '@/assets/svg/IcStackoverflow.svg';
 import { ESocialLink } from '@/types/enums/SocialLink.enum';
 
-const { email } = useRuntimeConfig();
+const { public: { email } } = useRuntimeConfig();
 
 const socialLinks = [
   {
