@@ -20,6 +20,20 @@ useHead({
       rel: 'canonical',
       href: 'https://antoine-piche.com/',
     },
+    {
+      rel: 'preload',
+      as: 'font',
+      type: 'font/woff',
+      href: '/fonts/CircularStd-Book.woff',
+      crossorigin: 'anonymous',
+    },
+    {
+      rel: 'preload',
+      as: 'font',
+      type: 'font/woff',
+      href: '/fonts/CircularStd-Bold.woff',
+      crossorigin: 'anonymous',
+    },
   ],
   meta: [
     { charset: 'utf-8' },
