@@ -14,6 +14,7 @@ import ExperienceMain from './components/experience/Main.vue';
 import { ESocialLink } from '@@/domain/portfolio/constants';
 
 const config = useRuntimeConfig();
+const { app: { baseURL } } = config;
 
 useHead({
   htmlAttrs: {
@@ -29,15 +30,32 @@ useHead({
       rel: 'preload',
       as: 'font',
       type: 'font/woff',
-      href: '/fonts/CircularStd-Book.woff',
+      href: `${baseURL}fonts/CircularStd-Book.woff`,
       crossorigin: 'anonymous',
     },
     {
       rel: 'preload',
       as: 'font',
       type: 'font/woff',
-      href: '/fonts/CircularStd-Bold.woff',
+      href: `${baseURL}fonts/CircularStd-Bold.woff`,
       crossorigin: 'anonymous',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: `${baseURL}favicon-32x32.png`,
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: `${baseURL}favicon-16x16.png`,
+    },
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: `${baseURL}favicon.ico`,
     },
   ],
   meta: [
@@ -51,23 +69,6 @@ useHead({
       name: 'description',
       content: `Antoine Piché is a Senior Software Engineer and Tech Lead with 10 years of experience`
         + ` in front-end architecture, based in Paris, France.`,
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      href: '/favicon-32x32.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      href: '/favicon-16x16.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico',
     },
   ],
   script: [
