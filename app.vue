@@ -14,7 +14,7 @@ useHead({
   htmlAttrs: {
     lang: 'en',
   },
-  title: 'Antoine Piché - Front-end Engineer (TypeScript)',
+  title: 'Antoine Piché - Senior Software Engineer',
   link: [
     {
       rel: 'canonical',
@@ -44,7 +44,8 @@ useHead({
     {
       hid: 'description',
       name: 'description',
-      content: 'Antoine Piché is a Front-end Engineer (Typescript) and VueJS enthusiast based in France',
+      content: `Antoine Piché is a Senior Software Engineer and Tech Lead with 10 years of experience`
+        + ` in front-end architecture, based in Paris, France.`,
     },
     {
       rel: 'icon',
@@ -72,7 +73,7 @@ useHead({
         '@type': 'Person',
         name: 'Antoine Piché',
         url: 'https://antoine-piche.com/',
-        jobTitle: 'Front-end Engineer',
+        jobTitle: 'Senior Software Engineer',
         image: 'https://antoine-piche.com/profile_picture.jpeg',
         sameAs: [
           ESocialLink.LinkedIn,
