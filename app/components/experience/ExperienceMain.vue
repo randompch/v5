@@ -2,7 +2,7 @@
   <section class="relative flex w-full justify-center bg-white py-4 text-slate-700 transition-colors dark:bg-slate-800 dark:text-white">
     <div class="container flex max-w-6xl flex-col gap-4 p-4 xl:flex-row xl:gap-10">
       <h2 class="mt-8 font-bold uppercase tracking-widest">
-        Experiences
+        {{ $t('experience.sectionTitle') }}
       </h2>
       <ExperienceItems
         class="mt-8 w-full"

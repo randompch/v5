@@ -8,6 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useHead, useRuntimeConfig } from '#imports';
 import BaseFooter from '@/components/base/BaseFooter.vue';
 import BaseHeader from '@/components/base/BaseHeader.vue';
@@ -22,6 +23,7 @@ export default defineComponent({
     ExperienceMain,
   },
   setup() {
+    const { t } = useI18n();
     const config = useRuntimeConfig();
     const { app: { baseURL } } = config;
 
@@ -29,7 +31,7 @@ export default defineComponent({
       htmlAttrs: {
         lang: 'en',
       },
-      title: 'Antoine Piché - Senior Software Engineer',
+      title: t('meta.title'),
       link: [
         {
           rel: 'canonical',
@@ -76,8 +78,7 @@ export default defineComponent({
         {
           hid: 'description',
           name: 'description',
-          content: `Antoine Piché is a Senior Software Engineer and Tech Lead with 10 years of experience`
-            + ` in front-end architecture, based in Paris, France.`,
+          content: t('meta.description'),
         },
       ],
       script: [
@@ -88,7 +89,7 @@ export default defineComponent({
             '@type': 'Person',
             name: 'Antoine Piché',
             url: 'https://antoine-piche.com/',
-            jobTitle: 'Senior Software Engineer',
+            jobTitle: t('meta.jobTitle'),
             image: 'https://antoine-piche.com/profile_picture.jpeg',
             sameAs: [
               ESocialLink.LinkedIn,

@@ -1,12 +1,10 @@
 <template>
   <div class="text-justify md:w-1/2">
     <h1 class="text-3xl font-bold text-slate-700 transition-colors dark:text-white">
-      Hi there! 👋 I'm Antoine<span class="text-amber-400">,</span>
+      {{ $t('profile.introduction.greeting') }}<span class="text-amber-400">,</span>
     </h1>
     <p class="relative mt-3 font-normal">
-      I'm a product-minded Senior Software Engineer and Tech Lead with 10 years of experience
-      and deep expertise in front-end architecture, based in Paris, France 🇫🇷,
-      currently at
+      {{ $t('profile.introduction.bioFirst') }}
       <BaseLink
         alt="Selency website"
         href="https://selency.com"
@@ -14,8 +12,7 @@
       >
         Selency
       </BaseLink>.
-      I lead the design and evolution of scalable web products, helping teams turn complex
-      product and engineering challenges into simple, reliable and scalable solutions.
+      {{ $t('profile.introduction.bioSecond') }}
     </p>
     <p
       class="relative mt-6 after:absolute after:bottom-0 after:left-0 after:size-full after:bg-gradient-to-t after:from-slate-50 after:from-0% after:content-[''] dark:after:from-slate-900"
@@ -24,10 +21,7 @@
         'after:hidden': shouldDisplayProfileDetails,
       }"
     >
-      My work spans the full front-end lifecycle, from system design and SSR strategy
-      to performance, testing, production reliability and long-term maintainability.
-      I care deeply about code quality, documentation and engineering practices
-      that help teams move faster with clarity and confidence.
+      {{ $t('profile.introduction.bioThird') }}
     </p>
   </div>
 </template>

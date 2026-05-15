@@ -17,13 +17,13 @@
             is-unstyled
             @click="toggleReadMore"
           >
-            Read
-            <span v-if="shouldDisplayProfileDetails">less</span>
-            <span v-else>more</span>
+            {{ $t('header.readPrefix') }}
+            <span v-if="shouldDisplayProfileDetails">{{ $t('header.readLess') }}</span>
+            <span v-else>{{ $t('header.readMore') }}</span>
             <span class="block h-0.5 w-auto max-w-0 bg-amber-400 transition-all duration-300 group-hover:max-w-full" />
           </BaseButton>
           <p>
-            Or see my experiences below<span class="text-amber-400">.</span>👇
+            {{ $t('header.experiencesHint') }}<span class="text-amber-400">.</span>👇
           </p>
         </div>
       </div>

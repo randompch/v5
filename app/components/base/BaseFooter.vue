@@ -20,7 +20,7 @@
       </div>
       <ClientOnly>
         <p class="text-center text-xxs text-slate-700 dark:text-white">
-          Coucou, petit perruche ! 🦜
+          {{ $t('footer.easterEgg') }}
         </p>
       </ClientOnly>
     </div>
@@ -29,6 +29,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useRuntimeConfig } from '#imports';
 import BaseLink from '@/components/base/BaseLink.vue';
 import IcSend from '@/assets/svg/IcSend.svg';
@@ -45,31 +46,32 @@ export default defineComponent({
     BaseLink,
   },
   setup() {
+    const { t } = useI18n();
     const { public: { email } } = useRuntimeConfig();
 
     const socialLinks = [
       {
-        alt: 'Email address',
+        alt: t('footer.socialLinks.email'),
         component: IcSend,
         link: `mailto:${email}`,
       },
       {
-        alt: 'Linkedin profile',
+        alt: t('footer.socialLinks.linkedin'),
         component: IcLinkedin,
         link: ESocialLink.LinkedIn,
       },
       {
-        alt: 'Github profile',
+        alt: t('footer.socialLinks.github'),
         component: IcGithub,
         link: ESocialLink.Github,
       },
       {
-        alt: 'StackOverflow profile',
+        alt: t('footer.socialLinks.stackoverflow'),
         component: IcStackoverflow,
         link: ESocialLink.StackOverflow,
       },
       {
-        alt: 'Medium profile',
+        alt: t('footer.socialLinks.medium'),
         component: IcMedium,
         link: ESocialLink.Medium,
       },
