@@ -12,17 +12,17 @@
       >
         Selency
       </BaseLink>.
-      {{ $t('profile.introduction.bioSecond') }}
     </p>
-    <p
+    <div
       class="relative mt-6 after:absolute after:bottom-0 after:left-0 after:size-full after:bg-gradient-to-t after:from-slate-50 after:from-0% after:content-[''] dark:after:from-slate-900"
       :class="{
         'after:block': !shouldDisplayProfileDetails,
         'after:hidden': shouldDisplayProfileDetails,
       }"
     >
-      {{ $t('profile.introduction.bioThird') }}
-    </p>
+      <p>{{ $t('profile.introduction.bioSecond') }}</p>
+      <p class="mt-6">{{ $t('profile.introduction.bioThird') }}</p>
+    </div>
   </div>
 </template>
 

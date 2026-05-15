@@ -27,8 +27,8 @@ describe('ProfileIntroduction', () => {
       props: { shouldDisplayProfileDetails: false },
     });
 
-    const fadedParagraph = wrapper.findAll('p').at(-1);
-    expect(fadedParagraph?.classes()).toContain('after:block');
+    const fadedSection = wrapper.findAll('div')[1];
+    expect(fadedSection.classes()).toContain('after:block');
   });
 
   it('hides the fade overlay when the profile details panel is expanded', () => {
@@ -37,7 +37,7 @@ describe('ProfileIntroduction', () => {
       props: { shouldDisplayProfileDetails: true },
     });
 
-    const fadedParagraph = wrapper.findAll('p').at(-1);
-    expect(fadedParagraph?.classes()).toContain('after:hidden');
+    const fadedSection = wrapper.findAll('div')[1];
+    expect(fadedSection.classes()).toContain('after:hidden');
   });
 });

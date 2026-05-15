@@ -28,7 +28,7 @@
         <span
           class="flex flex-col flex-wrap items-start gap-1 text-sm font-normal text-slate-700 transition-colors dark:text-slate-300 md:inline-flex md:flex-row md:items-center md:gap-2"
           :class="{
-            'mt-2': !isChild,
+            'mt-1 md:mt-2': !isChild,
           }"
         >
           <span>{{ experience.position }}</span>
@@ -62,11 +62,11 @@
 </template>
 
 <script lang="ts">
-import { defineAsyncComponent, defineComponent, type PropType } from 'vue';
 import BaseLink from '@/components/base/BaseLink.vue';
 import ExperienceItemChildTimeline from '@/components/experience/ExperienceItemChildTimeline.vue';
 import ExperienceItemPeriod from '@/components/experience/ExperienceItemPeriod.vue';
 import type { Experience } from '@@/domain/portfolio/types';
+import { defineAsyncComponent, defineComponent, type PropType } from 'vue';
 
 // Defined async to break the circular import between ExperienceItem and ExperienceItems.
 const ExperienceItems = defineAsyncComponent(() => import('@/components/experience/ExperienceItems.vue'));
