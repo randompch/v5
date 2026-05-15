@@ -60,24 +60,14 @@ export default [
         default: 'array',
       }],
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/naming-convention': ['error', 
-        {
-          selector: 'enum',
-          format: ['PascalCase'],
-          custom: {
-            regex: '^E[A-Z]',
-            match: true,
-          },
+      '@typescript-eslint/naming-convention': ['error', {
+        selector: 'interface',
+        format: ['PascalCase'],
+        custom: {
+          regex: '^I[A-Z]',
+          match: false,
         },
-        {
-          selector: 'interface',
-          format: ['PascalCase'],
-          custom: {
-            regex: '^I[A-Z]',
-            match: false,
-          },
-        },
-      ],
+      }],
       '@typescript-eslint/no-empty-interface': ['error', {
         allowSingleExtends: true,
       }],

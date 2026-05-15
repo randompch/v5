@@ -4,12 +4,12 @@ import type { EPosition } from '../enums/Position.enum';
 
 export interface Experience{
   company: {
-    name: `${ECompany}`;
+    name: ECompany;
     description: string;
   };
-  contractType: `${EContractType}`;
+  contractType: EContractType;
   endedAt: string;
-  position: `${EPosition}`;
+  position: EPosition;
   startedAt: string;
   timeSpent: string;
 }
