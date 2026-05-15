@@ -1,19 +1,16 @@
-import { mount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
 import ProfileIntroduction from '@/components/profile/ProfileIntroduction.vue';
 
 const stubI18n = {
   global: {
-    mocks: {
-      $t: (key: string): string => key,
-    },
-    stubs: { BaseLink: { template: '<a><slot /></a>' } },
+    mocks: { $t: (key: string): string => key },
   },
 };
 
 describe('ProfileIntroduction', () => {
   it('renders the greeting and the three bio fragments', () => {
-    const wrapper = mount(ProfileIntroduction, {
+    const wrapper = shallowMount(ProfileIntroduction, {
       ...stubI18n,
       props: { shouldDisplayProfileDetails: false },
     });
@@ -25,7 +22,7 @@ describe('ProfileIntroduction', () => {
   });
 
   it('shows the fade overlay when the profile details panel is collapsed', () => {
-    const wrapper = mount(ProfileIntroduction, {
+    const wrapper = shallowMount(ProfileIntroduction, {
       ...stubI18n,
       props: { shouldDisplayProfileDetails: false },
     });
@@ -35,7 +32,7 @@ describe('ProfileIntroduction', () => {
   });
 
   it('hides the fade overlay when the profile details panel is expanded', () => {
-    const wrapper = mount(ProfileIntroduction, {
+    const wrapper = shallowMount(ProfileIntroduction, {
       ...stubI18n,
       props: { shouldDisplayProfileDetails: true },
     });

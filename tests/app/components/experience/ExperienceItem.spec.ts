@@ -1,17 +1,6 @@
-import { mount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
 import ExperienceItem from '@/components/experience/ExperienceItem.vue';
-
-const stubChildren = {
-  global: {
-    stubs: {
-      BaseLink: { props: ['href'], template: '<a :href="href"><slot /></a>' },
-      ExperienceItemChildTimeline: true,
-      ExperienceItemPeriod: { template: '<span data-test="period" />' },
-      ExperienceItems: { template: '<ul data-test="children" />' },
-    },
-  },
-};
 
 const baseExperience = {
   company: {
@@ -28,20 +17,18 @@ const baseExperience = {
 };
 
 describe('ExperienceItem', () => {
-  it('renders the company name as a link pointing to the company website', () => {
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+  it('renders the company name and links to the company website', () => {
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: baseExperience, isChild: false, isLast: false },
     });
 
-    const link = wrapper.get('a');
+    const link = wrapper.findComponent({ name: 'BaseLink' });
     expect(link.text()).toContain('Selency');
-    expect(link.attributes('href')).toBe('https://selency.com');
+    expect(link.props('href')).toBe('https://selency.com');
   });
 
   it('renders the company description', () => {
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: baseExperience, isChild: false, isLast: false },
     });
 
@@ -49,8 +36,7 @@ describe('ExperienceItem', () => {
   });
 
   it('renders the position and contract type', () => {
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: baseExperience, isChild: false, isLast: false },
     });
 
@@ -59,8 +45,7 @@ describe('ExperienceItem', () => {
   });
 
   it('renders one badge per technology', () => {
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: baseExperience, isChild: false, isLast: false },
     });
 
@@ -75,12 +60,11 @@ describe('ExperienceItem', () => {
       ...baseExperience,
       company: { name: undefined, description: undefined, website: '' },
     };
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: experienceWithoutCompany, isChild: false, isLast: false },
     });
 
-    expect(wrapper.find('a').exists()).toBe(false);
+    expect(wrapper.findComponent({ name: 'BaseLink' }).exists()).toBe(false);
     expect(wrapper.text()).not.toContain('marketplace');
   });
 
@@ -89,27 +73,24 @@ describe('ExperienceItem', () => {
       ...baseExperience,
       children: [{ ...baseExperience, company: { name: 'Sub-role', description: '', website: '' } }],
     };
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: parentExperience, isChild: false, isLast: false },
     });
 
-    expect(wrapper.find('[data-test="children"]').exists()).toBe(true);
+    expect(wrapper.findComponent({ name: 'ExperienceItems' }).exists()).toBe(true);
   });
 
   it('omits the nested experiences block when no children are present', () => {
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: baseExperience, isChild: false, isLast: false },
     });
 
-    expect(wrapper.find('[data-test="children"]').exists()).toBe(false);
+    expect(wrapper.findComponent({ name: 'ExperienceItems' }).exists()).toBe(false);
   });
 
   it('omits the contract type badge when contractType is empty', () => {
     const experienceWithoutContract = { ...baseExperience, contractType: '' };
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: experienceWithoutContract, isChild: false, isLast: false },
     });
 
@@ -118,8 +99,7 @@ describe('ExperienceItem', () => {
 
   it('omits the technology badges when the list is empty', () => {
     const experienceWithoutTech = { ...baseExperience, technologies: [] };
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: experienceWithoutTech, isChild: false, isLast: false },
     });
 
@@ -130,8 +110,7 @@ describe('ExperienceItem', () => {
   });
 
   it('drops the top margin on the meta row when the item is a child', () => {
-    const wrapper = mount(ExperienceItem, {
-      ...stubChildren,
+    const wrapper = shallowMount(ExperienceItem, {
       props: { experience: baseExperience, isChild: true, isLast: false },
     });
 

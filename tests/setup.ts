@@ -1,3 +1,5 @@
-// Vitest setup hook. Module stubs (#imports, .svg) are wired via
-// resolve.alias in vitest.config.ts rather than vi.mock so Vite can
-// resolve them at transform time.
+import { config } from '@vue/test-utils';
+
+// Render the default slot of stubbed components so shallowMount tests
+// can still assert on slotted content (e.g. company name inside BaseLink).
+config.global.renderStubDefaultSlot = true;
