@@ -30,7 +30,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useRuntimeConfig } from '#imports';
-import BaseLink from './Link.vue';
+import BaseLink from '@/components/base/Link.vue';
 import IcSend from '@/assets/svg/IcSend.svg';
 // import IcDevCommunity from '@/assets/svg/IcDevCommunity.svg';
 import IcGithub from '@/assets/svg/IcGithub.svg';

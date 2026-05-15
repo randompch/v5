@@ -9,9 +9,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useHead, useRuntimeConfig } from '#imports';
-import BaseFooter from './components/base/Footer.vue';
-import BaseHeader from './components/base/Header.vue';
-import ExperienceMain from './components/experience/Main.vue';
+import BaseFooter from '@/components/base/Footer.vue';
+import BaseHeader from '@/components/base/Header.vue';
+import ExperienceMain from '@/components/experience/Main.vue';
 import { ESocialLink } from '@@/domain/portfolio/constants';
 
 export default defineComponent({

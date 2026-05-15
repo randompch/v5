@@ -63,13 +63,13 @@
 
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, type PropType } from 'vue';
-import BaseLink from '../base/Link.vue';
-import ExperienceItemChildTimeline from './ItemChildTimeline.vue';
-import ExperienceItemPeriod from './ItemPeriod.vue';
+import BaseLink from '@/components/base/Link.vue';
+import ExperienceItemChildTimeline from '@/components/experience/ItemChildTimeline.vue';
+import ExperienceItemPeriod from '@/components/experience/ItemPeriod.vue';
 import type { Experience } from '@@/domain/portfolio/types';
 
 // Defined async to break the circular import between Item and Items.
-const ExperienceItems = defineAsyncComponent(() => import('./Items.vue'));
+const ExperienceItems = defineAsyncComponent(() => import('@/components/experience/Items.vue'));
 
 export default defineComponent({
   name: 'ExperienceItem',

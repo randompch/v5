@@ -11,7 +11,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue';
-import ExperienceItem from './Item.vue';
+import ExperienceItem from '@/components/experience/Item.vue';
 import type { Experience } from '@@/domain/portfolio/types';
 
 export default defineComponent({

@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import BaseLink from '../base/Link.vue';
+import BaseLink from '@/components/base/Link.vue';
 
 export default defineComponent({
   name: 'ProfileIntroduction',
