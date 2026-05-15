@@ -1,6 +1,7 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
+import pluginTailwind from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 
 export default [
@@ -10,6 +11,7 @@ export default [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/essential'],
+  ...pluginTailwind.configs['flat/recommended'],
   {
     files: ['**/*.{js,mjs,cjs,ts,vue}'],
     languageOptions: {
