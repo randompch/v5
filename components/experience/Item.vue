@@ -5,8 +5,11 @@
       :is-last="isLast"
     />
     <div class="flex justify-between leading-6">
-      <span class="inline-flex w-full flex-1 flex-col gap-2">
-        <span class="inline-flex flex-col">
+      <span class="inline-flex w-full flex-1 flex-col">
+        <span
+          v-if="experience?.company?.name || experience?.company?.description"
+          class="inline-flex flex-col"
+        >
           <BaseLink
             v-if="experience?.company?.name"
             class="mr-auto font-bold"
@@ -22,7 +25,12 @@
           {{ experience.company.description }}
           </span>
         </span>
-        <span class="mt-2 flex flex-col flex-wrap items-start gap-1 text-sm font-normal text-slate-700 transition-colors dark:text-slate-300 md:inline-flex md:flex-row md:items-center md:gap-2">
+        <span
+          class="flex flex-col flex-wrap items-start gap-1 text-sm font-normal text-slate-700 transition-colors dark:text-slate-300 md:inline-flex md:flex-row md:items-center md:gap-2"
+          :class="{
+            'mt-2': !isChild,
+          }"
+        >
           <span>{{ experience.position }}</span>
           <span
             v-if="experience.contractType"
