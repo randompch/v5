@@ -39,6 +39,12 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: '@/assets/css/tailwind.css',
   },
+  // Use the plain Vue component import for SVGs. The default in nuxt-svgo v4
+  // ("componentext") wraps each SVG in <nuxt-icon> which injects a
+  // .nuxt-icon--fill { fill: currentColor } rule overriding fill="none".
+  svgo: {
+    defaultImport: 'component',
+  },
   i18n: {
     defaultLocale: 'en',
     strategy: 'no_prefix',
