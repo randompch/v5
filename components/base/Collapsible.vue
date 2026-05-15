@@ -27,7 +27,6 @@ export default defineComponent({
           element.style.visibility = null;
           element.style.height = 0;
 
-          // eslint-disable-next-line no-unused-expressions
           getComputedStyle(element).height;
 
           requestAnimationFrame(() => {
@@ -38,7 +37,6 @@ export default defineComponent({
           const height = getComputedStyle(element).height;
           element.style.height = height;
 
-          // eslint-disable-next-line no-unused-expressions
           getComputedStyle(element).height;
 
           requestAnimationFrame(() => {

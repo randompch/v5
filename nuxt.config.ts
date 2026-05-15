@@ -1,7 +1,11 @@
-import eslintPlugin from 'vite-plugin-eslint';
+import { defineNuxtConfig } from 'nuxt/config';
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2025-01-01',
+  future: {
+    compatibilityVersion: 4,
+  },
   colorMode: {
     classSuffix: '',
   },
@@ -9,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     'nuxt-svgo',
+    '@nuxtjs/mcp-toolkit',
   ],
   runtimeConfig: {
     public: {
@@ -19,10 +24,5 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: false,
     strict: false,
-  },
-  vite: {
-    plugins: [
-      eslintPlugin(),
-    ],
   },
 });
