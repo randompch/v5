@@ -33,10 +33,10 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import BaseButton from '@/components/base/Button.vue';
-import InputColorModeSwitcher from '@/components/input/ColorModeSwitcher.vue';
-import ProfileDetails from '@/components/profile/Details.vue';
-import ProfileIntroduction from '@/components/profile/Introduction.vue';
+import BaseButton from '@/components/base/BaseButton.vue';
+import InputColorModeSwitcher from '@/components/input/InputColorModeSwitcher.vue';
+import ProfileDetails from '@/components/profile/ProfileDetails.vue';
+import ProfileIntroduction from '@/components/profile/ProfileIntroduction.vue';
 
 export default defineComponent({
   name: 'BaseHeader',

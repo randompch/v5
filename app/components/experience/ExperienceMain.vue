@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
-import ExperienceItems from '@/components/experience/Items.vue';
+import ExperienceItems from '@/components/experience/ExperienceItems.vue';
 import { ECompany, EContractType, EPosition } from '@@/domain/portfolio/constants';
 
 const epochs = [

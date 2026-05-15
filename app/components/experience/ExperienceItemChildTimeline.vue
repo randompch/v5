@@ -25,8 +25,5 @@ export default defineComponent({
       default: false,
     },
   },
-  setup() {
-    return {};
-  },
 });
 </script>

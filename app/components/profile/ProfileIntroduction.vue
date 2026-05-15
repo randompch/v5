@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import BaseLink from '@/components/base/Link.vue';
+import BaseLink from '@/components/base/BaseLink.vue';
 
 export default defineComponent({
   name: 'ProfileIntroduction',
@@ -46,9 +46,6 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
-  },
-  setup() {
-    return {};
   },
 });
 </script>

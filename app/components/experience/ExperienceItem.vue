@@ -63,13 +63,13 @@
 
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, type PropType } from 'vue';
-import BaseLink from '@/components/base/Link.vue';
-import ExperienceItemChildTimeline from '@/components/experience/ItemChildTimeline.vue';
-import ExperienceItemPeriod from '@/components/experience/ItemPeriod.vue';
+import BaseLink from '@/components/base/BaseLink.vue';
+import ExperienceItemChildTimeline from '@/components/experience/ExperienceItemChildTimeline.vue';
+import ExperienceItemPeriod from '@/components/experience/ExperienceItemPeriod.vue';
 import type { Experience } from '@@/domain/portfolio/types';
 
-// Defined async to break the circular import between Item and Items.
-const ExperienceItems = defineAsyncComponent(() => import('@/components/experience/Items.vue'));
+// Defined async to break the circular import between ExperienceItem and ExperienceItems.
+const ExperienceItems = defineAsyncComponent(() => import('@/components/experience/ExperienceItems.vue'));
 
 export default defineComponent({
   name: 'ExperienceItem',
@@ -92,9 +92,6 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
-  },
-  setup() {
-    return {};
   },
 });
 </script>
