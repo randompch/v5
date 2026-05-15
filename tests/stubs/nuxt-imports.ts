@@ -15,9 +15,12 @@ export const useRuntimeConfig = (): {
 
 export const useHead = vi.fn();
 
-export const useColorMode = (): { value: string; preference: string } => ({
-  value: 'light',
-  preference: 'light',
-});
+// Singleton state for color mode so tests can assert mutations done by the component
+export const colorModeState = { value: 'light', preference: 'light' };
+export const useColorMode = (): typeof colorModeState => colorModeState;
+export const resetColorMode = (): void => {
+  colorModeState.value = 'light';
+  colorModeState.preference = 'light';
+};
 
 export const defineNuxtPlugin = vi.fn();

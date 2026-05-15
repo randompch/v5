@@ -1,6 +1,11 @@
 import { mount } from '@vue/test-utils';
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { colorModeState, resetColorMode } from '#imports';
 import InputColorModeSwitcher from '@/components/input/InputColorModeSwitcher.vue';
+
+beforeEach(() => {
+  resetColorMode();
+});
 
 const stubChildren = {
   global: {
@@ -23,5 +28,14 @@ describe('InputColorModeSwitcher', () => {
     const wrapper = mount(InputColorModeSwitcher, stubChildren);
 
     expect(wrapper.findAll('[data-test="svg-stub"]')).toHaveLength(1);
+  });
+
+  it('switches the preference to dark when clicked while in light mode', async () => {
+    colorModeState.value = 'light';
+    const wrapper = mount(InputColorModeSwitcher, stubChildren);
+
+    await wrapper.get('button').trigger('click');
+
+    expect(colorModeState.preference).toBe('dark');
   });
 });

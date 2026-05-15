@@ -105,4 +105,39 @@ describe('ExperienceItem', () => {
 
     expect(wrapper.find('[data-test="children"]').exists()).toBe(false);
   });
+
+  it('omits the contract type badge when contractType is empty', () => {
+    const experienceWithoutContract = { ...baseExperience, contractType: '' };
+    const wrapper = mount(ExperienceItem, {
+      ...stubChildren,
+      props: { experience: experienceWithoutContract, isChild: false, isLast: false },
+    });
+
+    expect(wrapper.text()).not.toContain('Full time');
+  });
+
+  it('omits the technology badges when the list is empty', () => {
+    const experienceWithoutTech = { ...baseExperience, technologies: [] };
+    const wrapper = mount(ExperienceItem, {
+      ...stubChildren,
+      props: { experience: experienceWithoutTech, isChild: false, isLast: false },
+    });
+
+    const techBadges = wrapper.findAll('span').filter((span) =>
+      ['Typescript', 'Nuxt'].includes(span.text()),
+    );
+    expect(techBadges).toHaveLength(0);
+  });
+
+  it('drops the top margin on the meta row when the item is a child', () => {
+    const wrapper = mount(ExperienceItem, {
+      ...stubChildren,
+      props: { experience: baseExperience, isChild: true, isLast: false },
+    });
+
+    const metaRow = wrapper.findAll('span').find((span) =>
+      span.classes().includes('flex-col') && span.text().includes('Software engineer'),
+    );
+    expect(metaRow?.classes()).not.toContain('mt-2');
+  });
 });
