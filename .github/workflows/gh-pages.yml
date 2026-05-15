@@ -48,6 +48,9 @@ jobs:
 
       - name: Generate static site
         run: pnpm generate
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          GOOGLE_TAG_ID: ${{ secrets.GOOGLE_TAG_ID }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
