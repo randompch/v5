@@ -15,6 +15,13 @@ export default defineNuxtConfig({
       },
     },
   },
+  app: {
+    head: {
+      script: process.env.NODE_ENV === 'development'
+        ? [{ src: 'http://localhost:8098' }]
+        : [],
+    },
+  },
   compatibilityDate: '2025-01-01',
   future: {
     compatibilityVersion: 4,
